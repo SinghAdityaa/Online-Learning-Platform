@@ -6,7 +6,7 @@ form.addEventListener('submit', (e) => {
   form.reportValidity()
 
 
-  window.location = "/index.html" 
+  window.location = "/Online-Learning-Platform/index.html" 
   
 }
 )
