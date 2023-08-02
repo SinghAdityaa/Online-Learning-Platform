@@ -5,26 +5,30 @@ const courses = [
       title: "Python Programming",
       description: "Get started with Python programming language for beginners.",
       metadata: "Duration: 6 weeks | Instructor: Jane Smith",
-      link:"https://www.geeksforgeeks.org/python-programming-language/"
+      link:"https://www.geeksforgeeks.org/python-programming-language/",
+      img:"python_programming.jpg"
     },
    
     {
         title: "Web Development",
         description: "Learn the basics of HTML, CSS, and JavaScript to build websites.",
         metadata: "Duration: 4 weeks | Instructor: Prashant Dubey",
-        link:""
+        link:"",
+        img:"web_development.jpg"
       },
 
       {
          title: "Data Science",
          description: "Learn the basics of data analysis and visualization using Python.",
-         metadata: "Duration: 8 weeks | Instructor: Prashant Dubey"
+         metadata: "Duration: 8 weeks | Instructor: Prashant Dubey",
+         img:"data_science.jpg"
       },
 
       {
         title: "Graphic Design Fundamentals",
         description: "Learn the basics of machine learning algorithms and applications.",
-        metadata: "Duration: 10 weeks | Instructor: Prashant Dubey"
+        metadata: "Duration: 10 weeks | Instructor: Prashant Dubey",
+        img:"graphic_design_fundamentals.jpg"
      },
 
 
@@ -32,21 +36,26 @@ const courses = [
         title: "Introduction to Machine Learning",
         description: "Explore the principles of graphic design and create stunning visuals.",
         metadata: "Duration: 5 weeks | Instructor: Aditya Singh",
-        link:"https://www.geeksforgeeks.org/machine-learning/"
+        link:"https://www.geeksforgeeks.org/machine-learning/",
+        img:"introduction_to_machine_learning.jpg"
+
+
      },
 
 
      {
         title: "Introduction to Artificial Intelligence",
         description: "Learn the basics of Artificial Inteligence.",
-        metadata: "Duration: 10 weeks | Instructor: Aditya Singh"
+        metadata: "Duration: 10 weeks | Instructor: Aditya Singh",
+        img:"introduction_to_artificial_intelligence.jpg"
      },
 
 
      {
         title: "Introduction to Cloud Computing",
         description: "Learn the basics of Cloud Computing.",
-        metadata: "Duration: 10 weeks | Instructor:Prashant Dubey"
+        metadata: "Duration: 10 weeks | Instructor:Prashant Dubey",
+        img:"introduction_to_cloud_computing.jpg"
      },
 
 
@@ -63,11 +72,12 @@ const courses = [
       const courseItem = document.createElement("div");
       courseItem.className = "course-item";
       courseItem.innerHTML = `
-        <img src="img/${course.title.replace(/\s+/g, '_').toLowerCase()}.jpg" alt="Course Image">
+        <img src="img/${course.img}" alt="Course Image">
         <h2 class="course-title">${course.title}</h2>
         <p class="course-description">${course.description}</p>
         <p class="course-metadata">${course.metadata}</p>
         <a href="${course.link}" class="course-link">Enroll Now</a>
+        
       `;
       courseSection.appendChild(courseItem);
     });
