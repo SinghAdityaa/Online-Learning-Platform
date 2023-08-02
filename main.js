@@ -52,10 +52,10 @@ const courses = [
 
 
      {
-        title: "Introduction to Cloud Computing",
+        title: "Intro to Cloud Computing",
         description: "Learn the basics of Cloud Computing.",
         metadata: "Duration: 10 weeks | Instructor:Prashant Dubey",
-        img:"introduction_to_cloud_computing.jpg"
+        img:"intro_to_cloud_computing.jpg"
      },
 
 
