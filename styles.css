@@ -1,131 +1,148 @@
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  .head{
-    text-align: center;
-    background-color:#007bff;
-    padding: 15px;
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-  }
-  
-  nav a:hover {
-    background-color: #555;
-  }
-  
-  main {
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-  }
-  
-  .courses {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    grid-gap: 20px;
-  }
-  
-  .course-item {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
     text-align: center;
-  }
-  
-  .course-item img {
-    max-width: 100%;
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .course-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+
+.registration-form h2 {
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.registration-form label {
+    display: block;
     margin-bottom: 5px;
-  }
-  
-  .course-description {
-    font-size: 14px;
-    color: #555;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 8px;
     margin-bottom: 10px;
-  }
-  
-  .course-metadata {
-    font-size: 12px;
-    color: #888;
-    margin-bottom: 10px;
-  }
-  
-  .course-link {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
+    border: 1px solid #ddd;
     border-radius: 5px;
-  }
-  
-  .course-link:hover {
-    background-color: #0056b3;
-  }
-  
-  footer {
-    background-color: #333;
+    outline: none;
+    display: block;
+}
+
+.registration-form .submitbutton {
+    background-color: #007BFF;
     color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
     text-align: center;
-    padding: 10px;
-  }
-  
-  .resource-library {
-    padding: 20px;
-  }
-  
-  .resource-library h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .resources {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .resources li {
-    margin-bottom: 10px;
-  }
-  
-  .resources a {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
+    
+    
+}
+
+.registration-form .submitbutton:hover {
+    background-color: #16d640;
+}
+
+.course-list {
+    margin-top: 20px;
+}
+
+.search-bar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#course-search {
+    padding: 8px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-  }
-  
-  .resources a:hover {
-    background-color: #0056b3;
-  }
-  
-  
+    outline: none;
+}
+
+.course-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.course-card {
+    width: calc(33.33% - 20px);
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.course-card:hover {
+    transform: scale(1.02);
+}
+
+.course-card h3 {
+    margin: 0;
+}
+
+.course-card p {
+    margin: 5px 0;
+}
+
+.course-details {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.back-button {
+    background-color: #ccc;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.back-button:hover {
+    background-color: #b3b3b3;
+}
+
+.course-details h2 {
+    margin: 0;
+}
+
+.course-details p {
+    margin: 5px 0;
+}
