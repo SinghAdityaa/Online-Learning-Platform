@@ -13,11 +13,22 @@
 <body>
   <header>
     <nav>
+   
     </nav>
   </header>
 
   <main>
-
+    <div class="navbar">
+      <div class="dropdown">
+          <button class="dropdown-btn" onclick="toggleDropdown()">...</button>
+          <div class="dropdown-content" id="dropdown-content">
+              <a href="#resource1">Resource 1</a>
+              <a href="#resource2">Resource 2</a>
+              <a href="#resource3">Resource 3</a>
+          </div>
+      </div>
+      
+  </div>
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Search courses...">
    
@@ -25,20 +36,7 @@
   
     <section class="courses">
     </section>
-    <section class="resource-library">
-        <h2>Resource Library</h2>
-        <ul class="resources">
-          <li>
-            <a href="resources/pdf1.pdf" target="_blank">PDF 1</a>
-          </li>
-          <li>
-            <a href="resources/ebook1.pdf" target="_blank">eBook 1</a>
-          </li>
-          <li>
-            <a href="https://example.com/article1" target="_blank">Article 1</a>
-          </li>
          
-        </ul>
       </section>
   </main>
 
