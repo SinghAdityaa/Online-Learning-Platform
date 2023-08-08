@@ -13,7 +13,7 @@ const courses = [
         title: "Web Development",
         description: "Learn the basics of HTML, CSS, and JavaScript to build websites.",
         metadata: "Duration: 4 weeks | Instructor: Prashant Dubey",
-        link:"",
+        link:"https://www.geeksforgeeks.org/web-development-projects/",
         img:"web_development.jpg"
       },
 
@@ -21,6 +21,7 @@ const courses = [
          title: "Data Science",
          description: "Learn the basics of data analysis and visualization using Python.",
          metadata: "Duration: 8 weeks | Instructor: Prashant Dubey",
+         link:"https://www.geeksforgeeks.org/what-is-data-science/",
          img:"data_science.jpg"
       },
 
@@ -28,6 +29,7 @@ const courses = [
         title: "Graphic Design Fundamentals",
         description: "Learn the basics of machine learning algorithms and applications.",
         metadata: "Duration: 10 weeks | Instructor: Prashant Dubey",
+        link:"https://www.geeksforgeeks.org/introduction-to-computer-graphics/",
         img:"graphic_design_fundamentals.jpg"
      },
 
@@ -47,6 +49,7 @@ const courses = [
         title: "Introduction to Artificial Intelligence",
         description: "Learn the basics of Artificial Inteligence.",
         metadata: "Duration: 10 weeks | Instructor: Aditya Singh",
+        link:"https://www.geeksforgeeks.org/artificial-intelligence-an-introduction/",
         img:"introduction_to_artificial_intelligence.jpg"
      },
 
@@ -55,6 +58,7 @@ const courses = [
         title: "Intro to Cloud Computing",
         description: "Learn the basics of Cloud Computing.",
         metadata: "Duration: 10 weeks | Instructor:Prashant Dubey",
+        link:"https://www.geeksforgeeks.org/cloud-computing/",
         img:"intro_to_cloud_computing.jpg"
      },
 
