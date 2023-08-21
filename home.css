@@ -132,6 +132,7 @@ body {
   bottom: 55%;
   width: min-content;
   cursor: pointer;
+  
 }
 
 .inprogress2 img {
@@ -155,7 +156,7 @@ body {
 .learning-path {
   display: flex;
   gap: 20px;
-  margin-top: 90px;
+  margin-top: 150px;
 }
 
 .learning-section {
@@ -205,3 +206,6 @@ body {
   margin-top: 20px;
 }
 
+h2{
+
+}
