@@ -108,14 +108,21 @@ const courses = [
  
   renderCourses(courses);
 
-  // Toggle visibility of dropdown content
-function toggleDropdown() {
-  var dropdownContent = document.getElementById('dropdown-content');
-  if (dropdownContent.style.display === 'block') {
-      dropdownContent.style.display = 'none';   
-  } else {
-      dropdownContent.style.display = 'block';
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
   }
-}
-
   
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
