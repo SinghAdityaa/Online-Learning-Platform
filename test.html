@@ -72,7 +72,6 @@
           <label><input type="radio" name="q1" value="D"> D) Rome</label>
         </div>
       </div>
-      <!-- Question 2 -->
       <div class="question">
         <h2>2. What is 2 + 2?</h2>
         <div class="options">
@@ -84,7 +83,6 @@
       </div>
       <button type="button" class="btn" onclick="submitQuiz()">Submit</button>
     </form>
-    <!-- Result -->
     <div id="result" class="result"></div>
   </div>
 
@@ -92,7 +90,7 @@
     function submitQuiz() {
       const answers = {
         q1: 'C', 
-        q2: 'B'  // Correct answer for question 2
+        q2: 'B' 
       };
 
       let score = 0;
