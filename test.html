@@ -3,63 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f4f4f9;
-      color: #333;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      text-align: center;
-      color: #4caf50;
-    }
-    .question {
-      margin: 20px 0;
-    }
-    .question h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .options label {
-      display: block;
-      margin-bottom: 8px;
-      cursor: pointer;
-    }
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      background-color: #4caf50;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background-color: #45a049;
-    }
-    .result {
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #e8f5e9;
-      color: #2e7d32;
-      font-weight: bold;
-      display: none;
-    }
-  </style>
-</head>
-<body>
+  <link rel="stylesheet" href="./test.css">
+  <title>Test Page</title> </head>
+  <body>
+      
+
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Menu</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="https://singhadityaa.github.io/Online-Learning-Platform/home.html">Home</a>
+        <a href="https://singhadityaa.github.io/Online-Learning-Platform/courses.html"> Courses</a>
+        <a href="#contact">Favorites</a>
+        <a href="https://singhadityaa.github.io/Online-Learning-Platform/test.html">Tests</a>
+        <a href="#">Achievements</a>
+        <a href="#">Certificates</a>
+        <a href="#">Settings</a>
+      </div>
+      
   <div class="container">
     <h1>Quiz Test</h1>
     <form id="quizForm">
@@ -85,29 +45,33 @@
     </form>
     <div id="result" class="result"></div>
   </div>
-
+  
   <script>
-    function submitQuiz() {
-      const answers = {
-        q1: 'C', 
-        q2: 'B' 
-      };
+function myFunction() {
+  const dropdown = document.getElementById('myDropdown');
+  dropdown.classList.toggle('show');
+}
 
-      let score = 0;
-      const form = document.getElementById('quizForm');
-      const resultDiv = document.getElementById('result');
-
-      for (let question in answers) {
-        const selected = form.elements[question].value;
-        if (selected === answers[question]) {
-          score++;
-        }
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName('dropdown-content');
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
       }
-
-      resultDiv.innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
-      resultDiv.style.display = 'block';
     }
+  }
+};
+
+
     
   </script>
-</body>
-</html>
+  </body>
+  </html>
+  
+
+ 
+    
+   
