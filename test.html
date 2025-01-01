@@ -47,7 +47,27 @@
   </div>
   
   <script>
-function myFunction() {
+    function submitQuiz() {
+      const answers = {
+        q1: 'C', 
+        q2: 'B' 
+      };
+  
+      let score = 0;
+      const form = document.getElementById('quizForm');
+      const resultDiv = document.getElementById('result');
+  
+      for (let question in answers) {
+        const selected = form.elements[question].value;
+        if (selected === answers[question]) {
+          score++;
+        }
+      }
+  
+      resultDiv.innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
+      resultDiv.style.display = 'block';
+    }
+    function myFunction() {
   const dropdown = document.getElementById('myDropdown');
   dropdown.classList.toggle('show');
 }
@@ -64,8 +84,6 @@ window.onclick = function(event) {
   }
 };
 
-
-    
   </script>
   </body>
   </html>
