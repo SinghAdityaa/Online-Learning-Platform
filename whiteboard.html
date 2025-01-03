@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editable Text Area with Drawing</title>
+  <link rel="stylesheet" href="./whiteboard.css">
+</head>
+<body>
+  <div class="container">
+    <div class="toolbar">
+      <button onclick="undo()" title="Undo">&#x21B6;</button>
+      <button onclick="redo()" title="Redo">&#x21B7;</button>
+      <select id="fontSelect" onchange="changeFont()">
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Verdana">Verdana</option>
+      </select>
+      <input type="number" id="fontSize" value="16" min="10" onchange="changeFontSize()" title="Font Size">
+      <button onclick="addText()" title="Add Text">Add Text</button>
+      <button onclick="toggleDrawingMode()" title="Toggle Drawing">Toggle Drawing</button>
+      <button onclick="activateEraser()" title="Eraser">Eraser</button>
+    </div>
+    <div class="text-area" id="textArea">
+      <canvas id="drawingCanvas"></canvas>
+    </div>
+  </div>
+  <script src="./whiteboard.js"></script>
+</body>
+</html>
