@@ -150,3 +150,13 @@ function restoreHistory() {
   };
  
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  function myFunction() {
+    const dropdown = document.getElementById('myDropdown');
+    dropdown.classList.toggle('show');
+  }
+
+  const menuButton = document.querySelector('.dropbtn');
+  menuButton.addEventListener('click', myFunction);
+});
