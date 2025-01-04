@@ -3,16 +3,19 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #e0eafc, #cfdef3);
-  color: #333;
+  min-height: 100vh;
+  padding: 10px;
 }
+
 .container {
   width: 90%;
   max-width: 850px;
@@ -24,11 +27,14 @@ body {
   position: relative;
   transition: transform 0.3s;
 }
+
 .container:hover {
   transform: translateY(-5px);
 }
+
 .toolbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 20px;
@@ -37,33 +43,13 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.toolbar button {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #555;
-  padding: 6px 8px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-.toolbar button:hover {
-  background-color: #ddd;
-  color: #000;
-}
+
+.toolbar button,
 .toolbar select,
 .toolbar input {
-  padding: 6px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: border-color 0.3s;
+  margin: 5px;
 }
-.toolbar select:focus,
-.toolbar input:focus {
-  border-color: #666;
-}
+
 .text-area {
   min-height: 350px;
   border: 2px dashed #bbb;
@@ -73,20 +59,7 @@ body {
   background-color: #fdfdfd;
   overflow: hidden;
 }
-.text-element {
-  position: absolute;
-  z-index: 2;
-  cursor: move;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  transition: box-shadow 0.3s;
-}
-.text-element:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
+
 #drawingCanvas {
   position: absolute;
   top: 0;
@@ -94,14 +67,19 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  pointer-events: none;
-}
-dropdown {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 20px;
 }
 
+.text-element {
+  position: absolute;
+  cursor: move;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Dropdown Button */
 .dropbtn {
   background-color: #4caf50;
   color: white;
@@ -110,33 +88,180 @@ dropdown {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  position: fixed; /* Fixed to stay on the top-left of the screen */
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Ensure it stays above other elements */
 }
 
-.dropbtn:hover,
-.dropbtn:focus {
-  background-color: #45a049;
-}
-
+/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 50px; /* Below the button */
+  left: 10px;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 1000;
+  border-radius: 4px;
 }
 
+/* Show Dropdown Content */
+.dropdown-content.show {
+  display: block;
+}
+
+/* Links inside the Dropdown */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-size: 14px;
 }
 
+/* Change Background on Hover */
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: #ddd;
 }
 
-.dropdown-content.show {
-  display: block;
+/* Fix for smaller screens */
+@media (max-width: 768px) {
+  .dropbtn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  .dropdown-content {
+    min-width: 120px;
+  }
+
+  .dropdown-content a {
+    font-size: 12px;
+  }
+}
+/* Toolbar Styling */
+.toolbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* General Button Styles */
+.toolbar button {
+  background-color: #4caf50; /* Green color */
+  color: white;
+  font-size: 18px; /* Increased font size */
+  padding: 12px 20px; /* Increased padding */
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect for Buttons */
+.toolbar button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active State */
+.toolbar button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: scale(0.98);
+}
+
+/* Dropdown Button (Menu) */
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Select and Input in Toolbar */
+.toolbar select,
+.toolbar input {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.toolbar select:focus,
+.toolbar input:focus {
+  border-color: #4caf50;
+}
+
+/* Add Text Button */
+.toolbar button[title="Add Text"] {
+  background-color: #2196f3; /* Blue color */
+}
+
+.toolbar button[title="Add Text"]:hover {
+  background-color: #1e88e5; /* Darker blue on hover */
+}
+
+/* Eraser Button */
+.toolbar button[title="Eraser"] {
+  background-color: #f44336; /* Red color */
+}
+
+.toolbar button[title="Eraser"]:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+/* Undo and Redo Buttons */
+.toolbar button[title="Undo"],
+.toolbar button[title="Redo"] {
+  background-color: #ff9800; /* Orange color */
+}
+
+.toolbar button[title="Undo"]:hover,
+.toolbar button[title="Redo"]:hover {
+  background-color: #fb8c00; /* Darker orange on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .toolbar button {
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+
+  .dropbtn {
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+
+  .toolbar select,
+  .toolbar input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
 }
