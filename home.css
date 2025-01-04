@@ -1,199 +1,126 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: black;
-  }
-  
-  .container {
-    display: flex;
-    
-
-  }
-  
-  .sidebar {
-    width: 250px;
-    padding: 20px;
-    display: block;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(20, 17, 17);
-
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    padding: 20px;
-    background-color: #00ffff;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    /* margin-top: 40%; */
-  }
-  
-  nav ul li {
-    margin-bottom: 25px;
-  }
-  
-  nav ul li a {
-    color: rgb(247, 243, 243);
-    text-decoration: none;
-   
-  }
-  
-  nav ul li a:hover{
-    border-radius: 8px ;
-    background-color:#9bddff ;
-    padding: 8px;
-    color: black;
-    }
-
-    .home{
-      border-radius: 8px ;
-      background-color:#9bddff ;
-      padding: 8px;
-      color: black;
-    }
-  
-  .content {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .name{
-    margin-bottom: -1%;
-    display: flex;
-    align-items: center;
-  
-    
-  }
-  .profile {
-    display: flex;
-
-    
-  }
-  
-  .profile img {
-    width: 40px; 
-    height: 40px;
-    border-radius: 50%;
-    
-  }
-  .content{
-    background-color: black;
-    color: white;
-  }
-
-  h4,h1{
-    color: white;
-    display: flex;
-  }
-
- 
-  img{
-    width: 40%;
-    border-radius: 20px;
-
-  }
-
-   
-  
-  .something{
-   position: absolute;
-   left: 60%;
-   bottom: 73%;
-  
-  }
-
-.inprogress img {
-  position: absolute;
-  left: 60%;
-  bottom: 65%;
-  width: min-content;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
 }
 
-.inprogress img:hover{
-  cursor: pointer;
-  
-
+.container {
+  display: flex;
+  flex-wrap: wrap; 
 }
 
-.inprogress img {
-  background-attachment: fixed;
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  background-color: rgb(20, 17, 17);
 }
 
-.inprogress1 img {
-  position: absolute;
-  left: 60%;
-  bottom: 55%;
-  width: min-content;
-  cursor: pointer;
-  
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  background-color: #00ffff;
+  color: white;
+  border-radius: 5px;
+  text-align: center; 
 }
 
-.inprogress2 img {
-  position: absolute;
-  left: 60%;
-  bottom: 46.4%;
-  width: min-content;
-  cursor: pointer;
+nav ul {
+  list-style: none;
+  padding: 0;
 }
 
-.inprogress3 img {
-  position: absolute;
-  left: 60%;
-  bottom: 36.8%;
-  width: min-content;
-  cursor: pointer;
+nav ul li {
+  margin-bottom: 15px;
 }
 
+nav ul li a {
+  color: rgb(247, 243, 243);
+  text-decoration: none;
+}
 
+nav ul li a:hover {
+  border-radius: 8px;
+  background-color: #9bddff;
+  padding: 8px;
+  color: black;
+}
+
+.home {
+  border-radius: 8px;
+  background-color: #9bddff;
+  padding: 8px;
+  color: black;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  color: white;
+  background-color: black;
+}
+
+img {
+  width: 55%; 
+  border-radius: 15px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 
 .learning-path {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  margin-top: 150px;
+  margin-top: 20px;
 }
 
 .learning-section {
-  flex: 1;
+  flex: 1 1 calc(33.33% - 20px); 
   padding: 20px;
   background-color: #0c0b0b;
   border-radius: 10px;
   cursor: pointer;
+  color: white;
+}
+
+.learning-section img {
+  width: 80%; 
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto; 
 }
 
 .learning-section h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .learning-section p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
+.notification {
+  position: relative;
+  margin-top: 20px;
+  text-align: right;
+}
 
-
-
-
-.notification button
-{ 
+.notification button {
   background: none;
   border: none;
   cursor: pointer;
   color: white;
   font-size: 24px;
-  margin-left: 75%;
-  margin-top: 25px;
-  position: absolute;
-
 }
-
-
 
 .notification-badge {
   background-color: red;
@@ -202,7 +129,89 @@ body {
   border-radius: 50%;
   padding: 3px 6px;
   position: absolute;
-  margin-left: 76%;
-  margin-top: 20px;
+  top: 0;
+  right: 0;
 }
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+  }
+
+  .sidebar {
+    width: 100%; 
+    padding: 15px;
+    text-align: center;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .profile img {
+    width: 30px; 
+    height: 30px;
+  }
+
+  .learning-section {
+    flex: 1 1 calc(50% - 20px); 
+  }
+
+  .learning-section img {
+    width: 70%; 
+
+  img {
+    width: 100%; 
+  }
+
+  .notification button {
+    margin: 0 auto;
+    font-size: 20px;
+  }
+
+  .notification-badge {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  .profile img {
+    width: 25px; 
+    height: 25px;
+  }
+
+  .learning-section {
+    flex: 1 1 100%; 
+  }
+
+  .learning-section img {
+    width: 60%; 
+  }
+
+  .learning-section h2 {
+    font-size: 18px;
+  }
+
+  .learning-section p {
+    font-size: 14px;
+  }
+
+  .notification button {
+    font-size: 18px;
+  }
+}
+}

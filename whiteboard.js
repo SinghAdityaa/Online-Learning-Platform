@@ -9,10 +9,9 @@ let currentElement = null;
 let offsetX = 0;
 let offsetY = 0;
 
-// History for Undo/Redo
 let history = [];
 let historyIndex = -1;
-let drawingHistory = []; // To track drawing actions
+let drawingHistory = []; 
 
 function resizeCanvas() {
   canvas.width = textArea.offsetWidth;
@@ -21,9 +20,8 @@ function resizeCanvas() {
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
-// Drawing on canvas
 canvas.addEventListener('mousedown', (e) => {
-  if (e.target !== canvas) return; // Ensure drawing only on canvas
+  if (e.target !== canvas) return; 
   isDrawing = true;
   [lastX, lastY] = [e.offsetX, e.offsetY];
 });
@@ -35,7 +33,7 @@ canvas.addEventListener('mousemove', (e) => {
 
 canvas.addEventListener('mouseup', () => {
   isDrawing = false;
-  saveDrawingHistory(); // Save the drawing action on mouseup
+  saveDrawingHistory(); 
 });
 
 canvas.addEventListener('mouseout', () => {
@@ -43,20 +41,20 @@ canvas.addEventListener('mouseout', () => {
 });
 
 canvas.addEventListener('touchstart', (e) => {
-  e.preventDefault(); // Prevent scrolling on touch
+  e.preventDefault(); 
   const rect = canvas.getBoundingClientRect();
   startDrawing(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
 });
 
 canvas.addEventListener('touchmove', (e) => {
-  e.preventDefault(); // Prevent scrolling on touch
+  e.preventDefault(); 
   const rect = canvas.getBoundingClientRect();
   draw(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
 });
 
 canvas.addEventListener('touchend', () => {
   isDrawing = false;
-  saveDrawingHistory(); // Save the drawing action on touchend
+  saveDrawingHistory(); 
 });
 
 function draw(x, y) {
@@ -70,7 +68,7 @@ function draw(x, y) {
   ctx.lineTo(x, y);
   ctx.stroke();
 
-  // Store the drawing actions in drawingHistory
+ 
   drawingHistory.push({
     x1: lastX,
     y1: lastY,
@@ -83,7 +81,6 @@ function draw(x, y) {
   [lastX, lastY] = [x, y];
 }
 
-// Adding new text element
 function addText() {
   let newText = document.createElement('div');
   newText.classList.add('text-element');
@@ -94,13 +91,12 @@ function addText() {
   newText.textContent = 'New Text';
   newText.addEventListener('mousedown', startDrag);
   textArea.appendChild(newText);
-  newText.focus(); // Focus on the new text for editing
-  saveHistory(); // Save the state after adding new text
+  newText.focus(); 
+  saveHistory(); 
 }
 
-// Dragging the text element
 function startDrag(event) {
-  event.stopPropagation(); // Prevent conflict with canvas drawing
+  event.stopPropagation(); 
   currentElement = event.target;
   offsetX = event.clientX - currentElement.getBoundingClientRect().left;
   offsetY = event.clientY - currentElement.getBoundingClientRect().top;
@@ -123,30 +119,26 @@ function stopDrag() {
   document.removeEventListener('mousemove', drag);
   document.removeEventListener('mouseup', stopDrag);
   currentElement = null;
-  saveHistory(); // Save the state after dragging
+  saveHistory(); 
 }
 
-// Enable drawing mode (deactivate eraser)
 function toggleDrawingMode() {
   isEraser = false;
-  canvas.style.pointerEvents = 'auto'; // Re-enable drawing
+  canvas.style.pointerEvents = 'auto'; 
   clearTextSelection();
-  saveHistory(); // Save state
+  saveHistory(); 
 }
 
-// Activate eraser mode
 function activateEraser() {
   isEraser = true;
 }
 
-// Clear text selection (remove focus from text elements)
 function clearTextSelection() {
   document.querySelectorAll('.text-element').forEach((el) => {
-    el.blur(); // Remove focus from all text elements
+    el.blur(); 
   });
 }
 
-// Handle dropdown toggle
 function myFunction() {
   const dropdown = document.getElementById('myDropdown');
   dropdown.classList.toggle('show');
@@ -164,33 +156,28 @@ window.onclick = function (event) {
   }
 };
 
-// Save canvas and text history
 function saveHistory() {
   const snapshot = {
     html: textArea.innerHTML,
-    drawingHistory: [...drawingHistory], // Clone the drawing history
+    drawingHistory: [...drawingHistory],
   };
 
-  history = history.slice(0, historyIndex + 1); // Trim any forward history after a new action
+  history = history.slice(0, historyIndex + 1); 
   history.push(snapshot);
   historyIndex++;
 }
 
-// Restore previous state
 function restoreHistory() {
   const snapshot = history[historyIndex];
   textArea.innerHTML = snapshot.html;
 
-  // Reinitialize events for text elements
   document.querySelectorAll('.text-element').forEach((textElement) => {
     textElement.addEventListener('mousedown', startDrag);
   });
 
-  // Restore canvas drawing
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawingHistory = snapshot.drawingHistory; // Restore drawing history
+  drawingHistory = snapshot.drawingHistory;
 
-  // Redraw all strokes
   drawingHistory.forEach((stroke) => {
     ctx.strokeStyle = stroke.strokeStyle;
     ctx.lineWidth = stroke.lineWidth;
@@ -201,7 +188,6 @@ function restoreHistory() {
   });
 }
 
-// Undo action
 function undo() {
   if (historyIndex > 0) {
     historyIndex--;
@@ -209,7 +195,6 @@ function undo() {
   }
 }
 
-// Redo action
 function redo() {
   if (historyIndex < history.length - 1) {
     historyIndex++;
