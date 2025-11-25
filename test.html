@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./test.css">
+  <title>Test Page</title> </head>
+<<<<<<< HEAD
+  <body>
+      
+=======
+<<<<<<< HEAD
+  <body>w
+      <div class="alive ">
+        
+         
+
+      </div>
+=======
+  <body>
+      
+>>>>>>> 821f09efead0527444d9b861ef198c9391862896
+>>>>>>> 394a439 (Initial commit)
+
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Menu</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="https://singhadityaa.github.io/Online-Learning-Platform/home.html">Home</a>
+        <a href="https://singhadityaa.github.io/Online-Learning-Platform/courses.html"> Courses</a>
+        <a href="#contact">Favorites</a>
+        <a href="https://singhadityaa.github.io/Online-Learning-Platform/test.html">Tests</a>
+        <a href="#">Achievements</a>
+        <a href="#">Certificates</a>
+        <a href="#">Settings</a>
+        <a href="https://singhadityaa.github.io/Online-Learning-Platform/whiteboard">Whiteboard</a>
+
+      </div>
+      
+<<<<<<< HEAD
+  <div class="container">
+=======
+<<<<<<< HEAD
+  <div class="container">w  
+=======
+  <div class="container">
+>>>>>>> 821f09efead0527444d9b861ef198c9391862896
+>>>>>>> 394a439 (Initial commit)
+    <h1>Quiz Test</h1>
+    <form id="quizForm">
+      <div class="question">
+        <h2>1. What is the capital of France?</h2>
+        <div class="options">
+          <label><input type="radio" name="q1" value="A"> A) Berlin</label>
+          <label><input type="radio" name="q1" value="B"> B) Madrid</label>
+          <label><input type="radio" name="q1" value="C"> C) Paris</label>
+          <label><input type="radio" name="q1" value="D"> D) Rome</label>
+        </div>
+      </div>
+      <div class="question">
+        <h2>2. What is 2 + 2?</h2>
+        <div class="options">
+          <label><input type="radio" name="q2" value="A"> A) 3</label>
+          <label><input type="radio" name="q2" value="B"> B) 4</label>
+          <label><input type="radio" name="q2" value="C"> C) 5</label>
+          <label><input type="radio" name="q2" value="D"> D) 6</label>
+        </div>
+      </div>
+      <button type="button" class="btn" onclick="submitQuiz()">Submit</button>
+    </form>
+    <div id="result" class="result"></div>
+  </div>
+  
+  <script>
+    function submitQuiz() {
+      const answers = {
+        q1: 'C', 
+        q2: 'B' 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      };a
+  
+      let score = 0;
+      const form = document.getElementById('quizForm');
+      const resultDiv = document.getElemeaasntById('result');
+=======
+>>>>>>> 394a439 (Initial commit)
+      };
+  
+      let score = 0;
+      const form = document.getElementById('quizForm');
+      const resultDiv = document.getElementById('result');
+<<<<<<< HEAD
+=======
+>>>>>>> 821f09efead0527444d9b861ef198c9391862896
+>>>>>>> 394a439 (Initial commit)
+  
+      for (let question in answers) {
+        const selected = form.elements[question].value;
+        if (selected === answers[question]) {
+          score++;
+        }
+      }
+  
+      resultDiv.innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
+      resultDiv.style.display = 'block';
+    }
+    function myFunction() {
+  const dropdown = document.getElementById('myDropdown');
+  dropdown.classList.toggle('show');
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName('dropdown-content');
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
+
+  </script>
+  </body>
+  </html>
+  
+
+ 
+    
+   

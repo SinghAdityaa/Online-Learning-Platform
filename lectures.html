@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Lectures</title>
+  <link rel="stylesheet" href="/lectures.css" />
+</head>
+<body>
+  <header>
+    <h1>JavaScript Basics</h1>
+  </header>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Menu</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/home.html">Home</a>
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/courses.html">Courses</a>
+      <a href="#contact">Favorites</a>
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/test.html">Tests</a>
+      <a href="#">Achievements</a>
+      <a href="#">Certificates</a>
+      <a href="#">Settings</a>
+      <a href="#">Lectures</a>
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/whiteboard">Whiteboard</a>
+    </div>
+  </div>
+  <main class="container">
+    <aside class="sidebar">
+      <h2>Lectures</h2>
+      <ul id="lessonList">
+        <li class="active" data-video="/video/sample.mp4">Introduction</li>
+        <li data-video="/video/sample.mp4">Variables & Data Types</li>
+        <li data-video="/video/sample.mp4">Functions</li>
+        <li data-video="/video/sample.mp4">DOM Manipulation</li>
+      </ul>
+    </aside>
+
+    <section class="video-area">
+      <video id="videoPlayer" controls>
+        <source src="/video/sample.mp4" type="video/mp4">
+      </video>
+
+      <button id="completeBtn">✅ Mark as Complete</button
+      <p id="progressText">Progress: 0%</p>
+    </section>
+  </main>
+
+  <script src="/Online-Learning-Platform/lectures.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editable Whiteboard</title>
+  <link rel="stylesheet" href="./whiteboard.css">
+</head>
+<body>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Menu</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/home.html">Home</a>
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/courses.html">Courses</a>
+      <a href="#contact">Favorites</a>
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/test.html">Tests</a>
+      <a href="#">Achievements</a>
+      <a href="#">Certificates</a>
+      <a href="#">Settings</a>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <a href="#">Lectures</a>
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/whiteboard">Whiteboard</a>
+    </div>
+  </div>
+  
+=======
+>>>>>>> 394a439 (Initial commit)
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/whiteboard">Whiteboard</a>
+    </div>
+  </div>
+  s
+<<<<<<< HEAD
+=======
+>>>>>>> 821f09efead0527444d9b861ef198c9391862896
+>>>>>>> 394a439 (Initial commit)
+  <div class="container">
+    <div class="toolbar">
+      <button onclick="undo()" title="Undo">&#x21B6;</button>
+      <button onclick="redo()" title="Redo">&#x21B7;</button>
+      <select id="fontSelect" onchange="changeFont()">
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Verdana">Verdana</option>
+      </select>
+      <input type="number" id="fontSize" value="16" min="10" onchange="changeFontSize()" title="Font Size">
+      <button onclick="addText()" title="Add Text">Add Text</button>
+      <button onclick="toggleDrawingMode()" title="Toggle Drawing">Toggle Drawing</button>
+      <button onclick="activateEraser()" title="Eraser">Eraser</button>
+    </div>
+    
+    <div class="text-area" id="textArea">
+      <canvas id="drawingCanvas"></canvas>
+    </div>
+  </div>
+  <script src="./whiteboard.js"></script>
+</body>
+</html>
