@@ -8,25 +8,26 @@
 </head>
 <body>
 
+<!-- Overlay -->
+<div id="overlay"></div>
+
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
-  <h2>E-Learn</h2>
-  <a class="active" href="">Home</a>
+  <h2>E-Learning</h2>
+  <a href="home.html">Home</a>
   <a href="courses.html">Courses</a>
   <a href="favorites.html">Favorites</a>
   <a href="tests.html">Tests</a>
   <a href="certificates.html">Certificates</a>
-  <a href="whiteboard.html">Whiteboard</a>
 </div>
 
-<!-- Main Content -->
+<!-- Main -->
 <div class="main">
 
-  <!-- Topbar -->
   <div class="topbar">
     <button id="menuBtn">☰</button>
-    <h3>👋 Hi Aditya</h3>
-    <div class="profile">👤</div>
+    <h3>Hi Aditya 👋</h3>
+    <div class="profile"></div>
   </div>
 
   <h1>What will you learn today?</h1>
@@ -34,17 +35,60 @@
   <!-- Hero -->
   <div class="hero">
     <h2>Artificial Intelligence</h2>
-    <p>Learn AI with real-world projects.</p>
+    <p>Learn AI with real-world projects</p>
     <button>Start Learning</button>
   </div>
+<!-- Search -->
 
+<!-- Stats -->
+<div class="stats">
+  <div class="stat-card">
+    <h3>3</h3>
+    <p>Courses</p>
+  </div>
+  <div class="stat-card">
+    <h3>75%</h3>
+    <p>Avg Progress</p>
+  </div>
+  <div class="stat-card">
+    <h3>5🔥</h3>
+    <p>Day Streak</p>
+  </div>
+</div>
+
+<!-- Continue Watching -->
+<h2 class="section">Continue Watching</h2>
+
+<div class="continue-card">
+  <h3>JavaScript - Functions</h3>
+  <p>Last watched: 12:30</p>
+  <button>Resume ▶</button>
+</div>
+
+<!-- Recommended -->
+<h2 class="section">Recommended</h2>
+
+<div class="recommended">
+  <div class="rec-card">HTML & CSS</div>
+  <div class="rec-card">React Basics</div>
+  <div class="rec-card">Node.js</div>
+</div>
   <!-- Courses -->
   <h2 class="section">Continue Learning</h2>
 
-  <div class="courses">
-    <div class="card">JavaScript Basics (65%)</div>
-    <div class="card">UI/UX Design (40%)</div>
-    <div class="card">Firebase App (80%)</div>
+  <div class="course">
+    <p>JavaScript Basics</p>
+    <div class="progress"><div style="width:65%"></div></div>
+  </div>
+
+  <div class="course">
+    <p>UI/UX Design</p>
+    <div class="progress"><div style="width:40%"></div></div>
+  </div>
+
+  <div class="course">
+    <p>Firebase App</p>
+    <div class="progress"><div style="width:80%"></div></div>
   </div>
 
 </div>
