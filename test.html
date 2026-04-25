@@ -1,95 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./test.css">
-  <title>Test Page</title>
+  <title>Quiz Test</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+    }
+
+    /* Dropdown */
+    .dropbtn {
+      background-color: #333;
+      color: white;
+      padding: 12px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .show {
+      display: block;
+    }
+
+    /* Quiz */
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
 
-
+  <!-- Dropdown Menu -->
   <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">Menu</button>
+
     <div id="myDropdown" class="dropdown-content">
       <a href="https://singhadityaa.github.io/Online-Learning-Platform/home.html">Home</a>
-      <a href="https://singhadityaa.github.io/Online-Learning-Platform/courses.html"> Courses</a>
-      <a href="#contact">Favorites</a>
+      <a href="https://singhadityaa.github.io/Online-Learning-Platform/courses.html">Courses</a>
+      <a href="#">Favorites</a>
       <a href="https://singhadityaa.github.io/Online-Learning-Platform/test.html">Tests</a>
       <a href="#">Achievements</a>
       <a href="#">Certificates</a>
       <a href="#">Settings</a>
       <a href="https://singhadityaa.github.io/Online-Learning-Platform/whiteboard">Whiteboard</a>
-
     </div>
+  </div> <!-- ✅ Properly closed -->
 
-    <div class="container">
-      <h1>Quiz Test</h1>
-      <form id="quizForm">
-        <div class="question">
-          <h2>1. What is the capital of France?</h2>
-          <div class="options">
-            <label><input type="radio" name="q1" value="A"> Berlin</label>
-            <label><input type="radio" name="q1" value="B"> Madrid</label>
-            <label><input type="radio" name="q1" value="C"> Paris</label>
-            <label><input type="radio" name="q1" value="D"> Rome</label>
-          </div>
-        </div>
-        <div class="question">
-          <h2>2. What is 2 + 2?</h2>
-          <div class="options">
-            <label><input type="radio" name="q2" value="A"> 3</label>
-            <label><input type="radio" name="q2" value="B"> 4</label>
-            <label><input type="radio" name="q2" value="C"> 5</label>
-            <label><input type="radio" name="q2" value="D"> 6</label>
-          </div>
-        </div>
-        <button type="button" class="btn" onclick="submitQuiz()">Submit</button>
-      </form>
-      <div id="result" class="result"></div>
-    </div>
+  <!-- Quiz Section -->
+  <div class="container">
+    <h1>Quiz Test</h1>
 
-    <script>
-      function submitQuiz() {
-        const answers = {
-          q1: 'C',
-          q2: 'B'
-        };
+    <form id="quizForm">
 
-        let score = 0;
-        const form = document.getElementById('quizForm');
-        const resultDiv = document.getElementById('result');
+      <div class="question">
+        <h2>1. What is the capital of France?</h2>
+        <label><input type="radio" name="q1" value="A"> Berlin</label><br>
+        <label><input type="radio" name="q1" value="B"> Madrid</label><br>
+        <label><input type="radio" name="q1" value="C"> Paris</label><br>
+        <label><input type="radio" name="q1" value="D"> Rome</label>
+      </div>
 
-        for (let question in answers) {
-          const selected = form.elements[question].value;
-          if (selected === answers[question]) {
-            score++;
-          }
-        }
+      <div class="question">
+        <h2>2. What is 2 + 2?</h2>
+        <label><input type="radio" name="q2" value="A"> 3</label><br>
+        <label><input type="radio" name="q2" value="B"> 4</label><br>
+        <label><input type="radio" name="q2" value="C"> 5</label><br>
+        <label><input type="radio" name="q2" value="D"> 6</label>
+      </div>
 
-        resultDiv.innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
-        resultDiv.style.display = 'block';
-      }
-      function myFunction() {
-        const dropdown = document.getElementById('myDropdown');
-        dropdown.classList.toggle('show');
-      }
+      <button type="button" class="btn" onclick="submitQuiz()">Submit</button>
 
-      window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
-          const dropdowns = document.getElementsByClassName('dropdown-content');
-          for (let i = 0; i < dropdowns.length; i++) {
-            const openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      const answers = {
+        q1: 'C',
+        q2: 'B'
       };
 
-    </script>
-</body>
+      let score = 0;
+      const form = document.getElementById('quizForm');
+      const resultDiv = document.getElementById('result');
 
+      for (let question in answers) {
+        const options = form.elements[question];
+        let selected = "";
+
+        for (let i = 0; i < options.length; i++) {
+          if (options[i].checked) {
+            selected = options[i].value;
+          }
+        }
+
+        if (!selected) {
+          alert("Please answer all questions!");
+          return;
+        }
+
+        if (selected === answers[question]) {
+          score++;
+        }
+      }
+
+      resultDiv.innerText = `You scored ${score} out of ${Object.keys(answers).length}!`;
+      resultDiv.style.display = 'block';
+    }
+
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          dropdowns[i].classList.remove('show');
+        }
+      }
+    };
+  </script>
+
+</body>
 </html>
