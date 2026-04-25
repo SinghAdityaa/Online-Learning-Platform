@@ -4,64 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E-Learning</title>
-  <link rel="stylesheet" href="./home.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
 <!-- Sidebar -->
-<div class="sidebar">
-  <h2>E-Learning</h2>
-  <a class="active" href="./home.html">Home</a>
-  <a href="./courses.html">Courses</a>
-  <a href="./favorites.html">Favorites</a>
-  <a href="./tests.html">Tests</a>
-  <a href="./certificates.html">Certificates</a>
+<div class="sidebar" id="sidebar">
+  <h2>E-Learn</h2>
+  <a class="active" href="">Home</a>
+  <a href="courses.html">Courses</a>
+  <a href="favorites.html">Favorites</a>
+  <a href="tests.html">Tests</a>
+  <a href="certificates.html">Certificates</a>
   <a href="whiteboard.html">Whiteboard</a>
 </div>
 
-<!-- Main -->
+<!-- Main Content -->
 <div class="main">
 
   <!-- Topbar -->
   <div class="topbar">
+    <button id="menuBtn">☰</button>
     <h3>👋 Hi Aditya</h3>
     <div class="profile">👤</div>
   </div>
 
   <h1>What will you learn today?</h1>
 
-  <!-- Hero Card -->
+  <!-- Hero -->
   <div class="hero">
-    <div class="hero-text">
-      <h2>Artificial Intelligence</h2>
-      <p>Learn AI with real-world projects and tools.</p>
-      <button>Start Learning</button>
-    </div>
+    <h2>Artificial Intelligence</h2>
+    <p>Learn AI with real-world projects.</p>
+    <button>Start Learning</button>
   </div>
 
   <!-- Courses -->
   <h2 class="section">Continue Learning</h2>
 
   <div class="courses">
-
-    <div class="card">
-      <h3>JavaScript Basics</h3>
-      <p>Progress: 65%</p>
-    </div>
-
-    <div class="card">
-      <h3>UI/UX Design</h3>
-      <p>Progress: 40%</p>
-    </div>
-
-    <div class="card">
-      <h3>Firebase App</h3>
-      <p>Progress: 80%</p>
-    </div>
-
+    <div class="card">JavaScript Basics (65%)</div>
+    <div class="card">UI/UX Design (40%)</div>
+    <div class="card">Firebase App (80%)</div>
   </div>
 
 </div>
 
+<script src="home.js"></script>
 </body>
 </html>
