@@ -1,139 +1,171 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
   margin: 0;
-  background: #f9fafb;
-}
-
-header {
-  background: #2563eb;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-.container {
-  display: flex;
-  height: calc(100vh - 80px);
-}
-
-.sidebar {
-  width: 25%;
-  background: #f1f5f9;
-  padding: 1rem;
-  border-right: 2px solid #e2e8f0;
-  overflow-y: auto;
-}
-
-.sidebar h2 {
-  margin-bottom: 1rem;
-}
-
-.sidebar ul {
-  list-style: none;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.sidebar li {
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 6px;
-  margin-bottom: 5px;
-  transition: background 0.2s;
+body {
+  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+  color: #333;
 }
 
-.sidebar li:hover {
-  background: #dbeafe;
-}
-
-.sidebar li.active {
-  background: #2563eb;
+/* Header */
+header {
+  background: linear-gradient(90deg, #4a90e2, #0077ff);
   color: white;
-}
-
-.video-area {
-  flex: 1;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-video {
-  width: 90%;
-  max-height: 70vh;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-#completeBtn {
-  background: #22c55e;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-#completeBtn:hover {
-  background: #16a34a;
-}
-
-#progressText {
-  margin-top: 1rem;
+  padding: 18px;
+  text-align: center;
+  font-size: 22px;
   font-weight: bold;
-}
-#progressBar {
-  width: 90%;
-  height: 20px;
-  background: #e5e7eb;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 0.5rem;
-}
-#progressBar div {
-  height: 100%;
-  background: #22c55e;
-  width: 0;
-  transition: width 0.3s;
-}
-.dropbtn {
-  background-color: #2563eb;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 8px;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
+/* Dropdown */
 .dropdown {
-  position: relative;
-  display: inline-block;
-  margin: 1rem;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.dropbtn {
+  background: white;
+  color: #0077ff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  background: #0077ff;
+  color: white;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 8px;
+  top: 45px;
+  background: white;
+  border-radius: 10px;
+  min-width: 180px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+  padding: 12px;
   display: block;
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background: #0077ff;
+  color: white;
 }
 
 .show {
   display: block;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 25%;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+  color: #0077ff;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar li:hover {
+  background: #f0f7ff;
+}
+
+.sidebar li.active {
+  background: #0077ff;
+  color: white;
+  font-weight: 600;
+}
+
+/* Video Area */
+.video-area {
+  width: 75%;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+video {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Button */
+#completeBtn {
+  background: linear-gradient(90deg, #00c853, #00e676);
+  border: none;
+  padding: 12px 18px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#completeBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,200,83,0.3);
+}
+
+/* Progress */
+#progressText {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .video-area {
+    width: 100%;
+  }
 }
