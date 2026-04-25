@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -8,62 +7,53 @@
 
 body {
   background: linear-gradient(135deg, #eef2f7, #d9e4f5);
-  color: #333;
 }
 
 /* Header */
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: linear-gradient(90deg, #4a90e2, #0077ff);
   color: white;
-  padding: 18px;
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+}
+
+header h1 {
+  font-size: 20px;
 }
 
 /* Dropdown */
 .dropdown {
-  position: absolute;
-  top: 15px;
-  left: 15px;
+  position: relative;
 }
 
 .dropbtn {
   background: white;
   color: #0077ff;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: 10px 14px;
   border: none;
-  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.dropbtn:hover {
-  background: #0077ff;
-  color: white;
+  font-size: 18px;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
+  right: 0;
   top: 45px;
   background: white;
   border-radius: 10px;
   min-width: 180px;
-  overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .dropdown-content a {
-  padding: 12px;
   display: block;
-  color: #333;
+  padding: 12px;
   text-decoration: none;
-  transition: 0.2s;
+  color: black;
 }
 
 .dropdown-content a:hover {
@@ -79,33 +69,28 @@ header {
 .container {
   display: flex;
   gap: 20px;
-  padding: 25px;
+  padding: 20px;
 }
 
 /* Sidebar */
 .sidebar {
   width: 25%;
   background: white;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 15px;
+  border-radius: 12px;
 }
 
 .sidebar h2 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: #0077ff;
 }
 
-.sidebar ul {
-  list-style: none;
-}
-
 .sidebar li {
-  padding: 12px;
-  border-radius: 8px;
+  list-style: none;
+  padding: 10px;
   margin-bottom: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .sidebar li:hover {
@@ -115,50 +100,41 @@ header {
 .sidebar li.active {
   background: #0077ff;
   color: white;
-  font-weight: 600;
 }
 
 /* Video Area */
 .video-area {
   width: 75%;
   background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 15px;
+  border-radius: 12px;
 }
 
 video {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
+  border-radius: 10px;
 }
 
-/* Button */
 #completeBtn {
-  background: linear-gradient(90deg, #00c853, #00e676);
-  border: none;
-  padding: 12px 18px;
+  margin-top: 10px;
+  padding: 10px;
+  background: #00c853;
   color: white;
-  font-weight: bold;
-  border-radius: 8px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 #completeBtn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,200,83,0.3);
+  background: #00e676;
 }
 
-/* Progress */
 #progressText {
-  margin-top: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #555;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-/* Responsive */
+/* Mobile */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -167,5 +143,9 @@ video {
   .sidebar,
   .video-area {
     width: 100%;
+  }
+
+  header h1 {
+    font-size: 16px;
   }
 }

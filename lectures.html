@@ -2,34 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Course Lectures</title>
   <link rel="stylesheet" href="lectures.css" />
 </head>
 
 <body>
 
+  <!-- Header with Menu -->
   <header>
     <h1>JavaScript Basics</h1>
+
+    <div class="dropdown">
+      <button onclick="toggleMenu()" class="dropbtn">☰</button>
+
+      <div id="myDropdown" class="dropdown-content">
+        <a href="home.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="#">Favorites</a>
+        <a href="test.html">Tests</a>
+        <a href="#">Achievements</a>
+        <a href="#">Certificates</a>
+        <a href="#">Settings</a>
+        <a href="#">Lectures</a>
+        <a href="whiteboard.html">Whiteboard</a>
+      </div>
+    </div>
   </header>
 
-  <!-- Dropdown -->
-  <div class="dropdown">
-    <button onclick="toggleMenu()" class="dropbtn">Menu</button>
-
-    <div id="myDropdown" class="dropdown-content">
-      <a href="home.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="#">Favorites</a>
-      <a href="test.html">Tests</a>
-      <a href="#">Achievements</a>
-      <a href="#">Certificates</a>
-      <a href="#">Settings</a>
-      <a href="#">Lectures</a>
-      <a href="whiteboard.html">Whiteboard</a>
-    </div>
-  </div>
-
+  <!-- Main Layout -->
   <main class="container">
 
     <!-- Sidebar -->
@@ -43,7 +44,7 @@
       </ul>
     </aside>
 
-    <!-- Video Section -->
+    <!-- Video Area -->
     <section class="video-area">
       <video id="videoPlayer" controls>
         <source src="./videos/demo_video.mp4" type="video/mp4">
